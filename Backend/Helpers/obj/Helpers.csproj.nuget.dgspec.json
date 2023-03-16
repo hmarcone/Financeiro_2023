@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Helpers\\Helpers.csproj": {}
+    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Helpers\\Helpers.csproj": {}
   },
   "projects": {
-    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Helpers\\Helpers.csproj": {
+    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Helpers\\Helpers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Helpers\\Helpers.csproj",
+        "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Helpers\\Helpers.csproj",
         "projectName": "Helpers",
-        "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Helpers\\Helpers.csproj",
+        "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Helpers\\Helpers.csproj",
         "packagesPath": "C:\\Users\\humberto.freitas\\.nuget\\packages\\",
-        "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Helpers\\obj\\",
+        "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Helpers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\humberto.freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",

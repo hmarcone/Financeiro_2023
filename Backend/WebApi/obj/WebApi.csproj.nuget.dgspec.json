@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\WebApi\\WebApi.csproj": {}
+    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\WebApi\\WebApi.csproj": {
+    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\humberto.freitas\\.nuget\\packages\\",
-        "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\WebApi\\obj\\",
+        "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\humberto.freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",

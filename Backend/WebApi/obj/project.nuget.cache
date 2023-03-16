@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BTLoIf+qzVVvCo6HtJUIglIkZmlaZ+9gOIr46lj6fBsstM/OKy5WC386zUwiPtk5EC8/JPmi9wMiqolZ53ViKw==",
+  "dgSpecHash": "SPlI5Li4JPVsundcA3YVtJZ5azwJ7kcj3HZXskjobTscS66lrR1g/Nx6p27QlF9MeF9ghm2BXein5ZtjvJbhoQ==",
   "success": true,
-  "projectFilePath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\humberto.freitas\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.3\\microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "C:\\Users\\humberto.freitas\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

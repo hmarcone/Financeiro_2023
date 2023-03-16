@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Entities\\Entities.csproj": {}
+    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Entities\\Entities.csproj": {
+    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\humberto.freitas\\.nuget\\packages\\",
-        "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Entities\\obj\\",
+        "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\humberto.freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

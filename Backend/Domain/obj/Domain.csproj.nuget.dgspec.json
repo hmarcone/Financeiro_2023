@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Domain\\Domain.csproj": {}
+    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Domain\\Domain.csproj": {
+    "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\humberto.freitas\\.nuget\\packages\\",
-        "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Domain\\obj\\",
+        "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\humberto.freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",

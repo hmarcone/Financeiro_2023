@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5THOZ88/2lxAW2PLOuUCep6gEDO/4x9fnK2Ma9r3r0oJQ5zpKviFupMSNaik7FuKouWsm097dYZZfYIqVdvy0A==",
+  "dgSpecHash": "Ah7xTf7fA1vg8eSu2a6AlyQSefXoIQxnsdK6uP1a3Sh0td1gEEiZP0a9PrSFo8t3THEPgyAj8SlYfcM75dCqdg==",
   "success": true,
-  "projectFilePath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Infra\\Infra.csproj",
+  "projectFilePath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Infra\\Infra.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

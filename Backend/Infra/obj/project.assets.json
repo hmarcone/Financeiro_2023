@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Infra\\Infra.csproj",
+      "projectUniqueName": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Infra\\Infra.csproj",
       "projectName": "Infra",
-      "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Infra\\Infra.csproj",
+      "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Infra\\Infra.csproj",
       "packagesPath": "C:\\Users\\humberto.freitas\\.nuget\\packages\\",
-      "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Infra\\obj\\",
+      "outputPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Infra\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\humberto.freitas\\AppData\\Roaming\\NuGet\\NuGet.Config",

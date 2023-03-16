@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2nP3kBFyKgfQRg9zLXkpG53Zt9XHP8rGvgmffzrIGnfVLRs1hGSkmZASsGwVk+Lhs4Nkw0mqVxpsvnp64unkIg==",
+  "dgSpecHash": "azSOqDKTKIj9g2tE80E2caAoAldRornkOIxQaOMWKGXO3lurt5HkrWLfQeqHmw28fErnQnlbNtAFqiS3tHSF5A==",
   "success": true,
-  "projectFilePath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Helpers\\Helpers.csproj",
+  "projectFilePath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Helpers\\Helpers.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
