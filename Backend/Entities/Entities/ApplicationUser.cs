@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Entities.Entities;
-
-public class ApplicationUser : IdentityUser
+namespace Entities.Entities
 {
-    [Column("USR_CPF")]
-    public string? CPF { get; set; }
+    public class ApplicationUser : IdentityUser
+    {
+        [Column("USR_CPF")]
+        public string? CPF { get; set; }
+    }
 }

@@ -31,5 +31,5 @@ public class Despesa : Base
     [Column(Order = 1)]
     public int IdCategoria { get; set; }
 
-    public virtual Categoria Categoria { get; set; }
+    public virtual Categoria? Categoria { get; set; }
 }
