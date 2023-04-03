@@ -27,7 +27,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Data\\Cursos\\Valdir\\Financeiro2023\\Backend\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

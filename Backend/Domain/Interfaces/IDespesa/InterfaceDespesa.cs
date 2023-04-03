@@ -1,5 +1,11 @@
-﻿namespace Domain.Interfaces.IDespesa;
+﻿using Domain.Interfaces.Generics;
+using Entities.Entities;
 
-public interface InterfaceDespesa
+namespace Domain.Interfaces.IDespesa;
+
+public interface InterfaceDespesa : InterfaceGeneric<Despesa>
 {
+    Task<IList<Despesa>> ListarDespesasUsuario(string emailUsuario);
+
+    Task<IList<Despesa>> ListarDespesasUsuarioNaoPagasMesesAnterior(string emailUsuario);
 }

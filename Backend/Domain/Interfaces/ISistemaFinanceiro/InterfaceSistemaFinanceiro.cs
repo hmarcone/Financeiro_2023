@@ -1,5 +1,9 @@
-﻿namespace Domain.Interfaces.ISistemaFinanceiro;
+﻿using Domain.Interfaces.Generics;
+using Entities.Entities;
 
-public interface InterfaceSistemaFinanceiro
+namespace Domain.Interfaces.ISistemaFinanceiro;
+
+public interface InterfaceSistemaFinanceiro : InterfaceGeneric<SistemaFinanceiro>
 {
+    Task<IList<SistemaFinanceiro>> ListaSistemasUsuario(string emailUsuario);
 }
