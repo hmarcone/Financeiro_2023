@@ -2,28 +2,29 @@
 using Domain.Interfaces.InterfaceServicos;
 using Entities.Entities;
 
-namespace Domain.Services;
-
-public class CategoriaServico : ICategoriaServico
+namespace Domain.Services
 {
-    private readonly InterfaceCategoria _interfaceCategoria;
-
-    public CategoriaServico(InterfaceCategoria interfaceCategoria)
+    public class CategoriaServico : ICategoriaServico
     {
-        _interfaceCategoria = interfaceCategoria;
-    }
 
-    public async Task AdicionarCategoria(Categoria catagoria)
-    {
-        var valido = catagoria.ValidarPropriedadeString(catagoria.Nome, "Nome");
-        if (valido)
-            await _interfaceCategoria.Add(catagoria);
-    }
+        private readonly InterfaceCategoria _interfaceCategoria;
+        public CategoriaServico(InterfaceCategoria interfaceCategoria)
+        {
+            _interfaceCategoria = interfaceCategoria;
+        }
 
-    public async Task AtualizarCategoria(Categoria catagoria)
-    {
-        var valido = catagoria.ValidarPropriedadeString(catagoria.Nome, "Nome");
-        if (valido)
-            await _interfaceCategoria.Update(catagoria);
+        public async Task AdicionarCategoria(Categoria catagoria)
+        {
+            var valido = catagoria.ValidarPropriedadeString(catagoria.Nome, "Nome");
+            if (valido)
+                await _interfaceCategoria.Add(catagoria);
+        }
+
+        public async Task AtualizarCategoria(Categoria catagoria)
+        {
+            var valido = catagoria.ValidarPropriedadeString(catagoria.Nome, "Nome");
+            if (valido)
+                await _interfaceCategoria.Update(catagoria);
+        }
     }
 }
