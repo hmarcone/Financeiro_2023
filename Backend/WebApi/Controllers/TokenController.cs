@@ -7,7 +7,7 @@ using WebApi.Token;
 
 namespace WebApi.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 [ApiController]
 public class TokenController : ControllerBase
 {
