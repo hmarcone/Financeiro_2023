@@ -22,14 +22,14 @@ public class UsuarioSistemaFinanceiroController : ControllerBase
         _iUsuarioSistemaFinanceiroServico = iUsuarioSistemaFinanceiroServico;
     }
 
-    [HttpGet("/api/ListarUsuariosSistema")]
+    [HttpGet("/api/v1/ListarUsuariosSistema")]
     [Produces("application/json")]
     public async Task<object> ListaSistemasUsuario(int idSistema)
     {
         return await _interfaceUsuarioSistemaFinanceiro.ListarUsuariosSistema(idSistema);
     }
 
-    [HttpPost("/api/CadastrarUsuarioNoSistema")]
+    [HttpPost("/api/v1/CadastrarUsuarioNoSistema")]
     [Produces("application/json")]
     public async Task<object> CadastrarUsuarioNoSistema(int idSistema, string emailUsuario)
     {
@@ -53,7 +53,7 @@ public class UsuarioSistemaFinanceiroController : ControllerBase
 
     }
 
-    [HttpDelete("/api/DeleteUsuarioSistemaFinanceiro")]
+    [HttpDelete("/api/v1/DeleteUsuarioSistemaFinanceiro")]
     [Produces("application/json")]
     public async Task<object> DeleteUsuarioSistemaFinanceiro(int id)
     {

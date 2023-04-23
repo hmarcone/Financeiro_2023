@@ -22,14 +22,14 @@ public class SistemaFinanceirosController : ControllerBase
         _iSistemaFinanceiroServico = ISistemaFinanceiroServico;
     }
 
-    [HttpGet("/api/ListaSistemasUsuario")]
+    [HttpGet("/api/v1/ListaSistemasUsuario")]
     [Produces("application/json")]
     public async Task<object> ListaSistemasUsuario(string emailUsuario)
     {
         return await _interfaceSistemaFinanceiro.ListaSistemasUsuario(emailUsuario);
     }
 
-    [HttpPost("/api/AdicionarSistemaFinanceiro")]
+    [HttpPost("/api/v1/AdicionarSistemaFinanceiro")]
     [Produces("application/json")]
     public async Task<object> AdicionarSistemaFinanceiro(SistemaFinanceiro sistemaFinanceiro)
     {
@@ -38,7 +38,7 @@ public class SistemaFinanceirosController : ControllerBase
         return Task.FromResult(sistemaFinanceiro);
     }
 
-    [HttpPut("/api/AtualizarSistemaFinanceiro")]
+    [HttpPut("/api/v1/AtualizarSistemaFinanceiro")]
     [Produces("application/json")]
     public async Task<object> AtualizarSistemaFinanceiro(SistemaFinanceiro sistemaFinanceiro)
     {
@@ -47,7 +47,7 @@ public class SistemaFinanceirosController : ControllerBase
         return Task.FromResult(sistemaFinanceiro);
     }
 
-    [HttpGet("/api/ObterSistemaFinanceiro")]
+    [HttpGet("/api/v1/ObterSistemaFinanceiro")]
     [Produces("application/json")]
     public async Task<object> ObterSistemaFinanceiro(int id)
     {
@@ -55,7 +55,7 @@ public class SistemaFinanceirosController : ControllerBase
     }
 
 
-    [HttpDelete("/api/DeleteSistemaFinanceiro")]
+    [HttpDelete("/api/v1/DeleteSistemaFinanceiro")]
     [Produces("application/json")]
     public async Task<object> DeleteSistemaFinanceiro(int id)
     {

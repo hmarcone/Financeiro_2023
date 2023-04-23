@@ -23,7 +23,7 @@ public class TokenController : ControllerBase
 
     [AllowAnonymous]
     [Produces("application/json")]
-    [HttpPost("/api/CreateToken")]
+    [HttpPost("/api/v1/CreateToken")]
     public async Task<IActionResult> CreateToken([FromBody] InputModel Input)
     {
         if (string.IsNullOrWhiteSpace(Input.Email) || string.IsNullOrWhiteSpace(Input.Password))

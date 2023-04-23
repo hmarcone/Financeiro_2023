@@ -24,7 +24,7 @@ public class UsersController : ControllerBase
 
     [AllowAnonymous]
     [Produces("application/json")]
-    [HttpPost("/api/AdicionaUsuario")]
+    [HttpPost("/api/v1/AdicionaUsuario")]
     public async Task<IActionResult> AdicionaUsuario([FromBody] Login login)
     {
         if (string.IsNullOrWhiteSpace(login.Email) ||
