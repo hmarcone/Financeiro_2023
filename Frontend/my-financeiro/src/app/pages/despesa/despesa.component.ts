@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SelectModel } from 'src/app/models/SelectModel/SelectModel';
+import { SelectModel } from 'src/app/models/SelectModel';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
