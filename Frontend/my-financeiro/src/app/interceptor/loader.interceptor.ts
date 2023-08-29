@@ -56,11 +56,14 @@ export class LoaderInterceptor implements HttpInterceptor {
         processData: 'false',
         Authorization: 'Bearer ' + this.authService.getToken,
       });
+      console.log(headers);
     } else {
       headers = new HttpHeaders()
         .append('accept', 'application/json')
         .append('Content-Type', 'application/json')
         .append('Authorization', 'Bearer ' + this.authService.getToken);
+
+      console.log(headers);
     }
 
     let request = req.clone({ headers });

@@ -98,6 +98,8 @@ app.UseCors(x => x.AllowAnyOrigin()
 
 app.UseHttpsRedirection();
 
+//New
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

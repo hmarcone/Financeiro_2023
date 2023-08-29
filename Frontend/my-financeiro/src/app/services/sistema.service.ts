@@ -12,6 +12,8 @@ export class SistemaService {
   private readonly baseURL = environment['endPoint'];
 
   AdicionarSistemaFinanceiro(sistemaFinanceiro: SistemaFinanceiro) {
+    debugger;
+    console.log(sistemaFinanceiro);
     return this.httpClient.post<SistemaFinanceiro>(
       `${this.baseURL}/AdicionarSistemaFinanceiro`,
       sistemaFinanceiro
