@@ -35,7 +35,7 @@ public class SistemaFinanceirosController : ControllerBase
     {
         await _iSistemaFinanceiroServico.AdicionarSistemaFinanceiro(sistemaFinanceiro);
 
-        return Task.FromResult(sistemaFinanceiro);
+        return sistemaFinanceiro;
     }
 
     [HttpPut("/api/v1/AtualizarSistemaFinanceiro")]
