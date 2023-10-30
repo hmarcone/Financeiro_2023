@@ -11,7 +11,7 @@ import { SistemaService } from 'src/app/services/sistema.service';
   styleUrls: ['./sistema.component.scss'],
 })
 export class SistemaComponent {
-  tipoTela: number = 1; // 1 listagem, 2 cadastro, 3 edi��o
+  tipoTela: number = 1; // 1 listagem, 2 cadastro, 3 edição
   tableListSistemas: Array<SistemaFinanceiro>;
   id: string;
 
@@ -58,6 +58,7 @@ export class SistemaComponent {
   }
 
   ListaSistemasUsuario() {
+    this.itemEdicao = null;
     this.tipoTela = 1;
 
     this.sistemaService
@@ -96,37 +97,71 @@ export class SistemaComponent {
   }
 
   enviar() {
-    debugger;
     var dados = this.dadorForm();
-    let item = new SistemaFinanceiro();
-    item.Nome = dados['name'].value;
 
-    item.Id = 0;
-    item.Mes = 0;
-    item.Ano = 0;
-    item.DiaFechamento = 0;
-    item.GerarCopiaDespesa = true;
-    item.MesCopia = 0;
-    item.AnoCopia = 0;
+    if (this.itemEdicao) {
+      this.itemEdicao.Nome = dados['name'].value;
+      this.itemEdicao.NomePropriedade = '';
+      this.itemEdicao.mensagem = '';
+      this.itemEdicao.notificacoes = [];
 
-    this.sistemaService.AdicionarSistemaFinanceiro(item).subscribe(
-      (response: SistemaFinanceiro) => {
-        this.sistemaForm.reset();
-        debugger;
+      this.sistemaService.AtualizarSistemaFinanceiro(this.itemEdicao).subscribe(
+        (response: SistemaFinanceiro) => {
+          this.sistemaForm.reset();
+          this.ListaSistemasUsuario();
+        },
+        (error) => console.error(error),
+        () => {}
+      );
+    } else {
+      let item = new SistemaFinanceiro();
+      item.Nome = dados['name'].value;
 
-        console.log(response.Id);
-        this.sistemaService
-          .CadastrarUsuarioNoSistema(
-            response.Id,
-            this.authService.getEmailUser()
-          )
-          .subscribe(
-            (response: any) => {
-              debugger;
-            },
-            (error) => console.error(error),
-            () => {}
-          );
+      item.Id = 0;
+      item.Mes = 0;
+      item.Ano = 0;
+      item.DiaFechamento = 0;
+      item.GerarCopiaDespesa = true;
+      item.MesCopia = 0;
+      item.AnoCopia = 0;
+
+      this.sistemaService.AdicionarSistemaFinanceiro(item).subscribe(
+        (response: SistemaFinanceiro) => {
+          this.sistemaForm.reset();
+          debugger;
+
+          console.log(response.Id);
+          this.sistemaService
+            .CadastrarUsuarioNoSistema(
+              response.Id,
+              this.authService.getEmailUser()
+            )
+            .subscribe(
+              (response: any) => {
+                debugger;
+              },
+              (error) => console.error(error),
+              () => {}
+            );
+        },
+        (error) => console.error(error),
+        () => {}
+      );
+    }
+  }
+
+  itemEdicao: SistemaFinanceiro;
+
+  edicao(id: number) {
+    this.sistemaService.ObterSistemaFinanceiro(id).subscribe(
+      (reponse: SistemaFinanceiro) => {
+        if (reponse) {
+          this.itemEdicao = reponse;
+          this.tipoTela = 2;
+
+          var dados = this.dadorForm();
+          dados['name'].setValue(this.itemEdicao.Nome);
+        }
       },
       (error) => console.error(error),
       () => {}
