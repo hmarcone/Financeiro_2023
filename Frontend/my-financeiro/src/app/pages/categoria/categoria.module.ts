@@ -6,6 +6,8 @@ import { CategoriaRoutingModule } from './categoria-routing.module';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   providers: [],
@@ -18,6 +20,10 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
+    NgxPaginationModule,
+    FormsModule,
+    NgSelectModule,
+    MatIconModule,
   ],
 })
 export class CategoriaModule {}

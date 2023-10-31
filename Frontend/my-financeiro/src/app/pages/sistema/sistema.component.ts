@@ -128,7 +128,6 @@ export class SistemaComponent {
       this.sistemaService.AdicionarSistemaFinanceiro(item).subscribe(
         (response: SistemaFinanceiro) => {
           this.sistemaForm.reset();
-          debugger;
 
           console.log(response.Id);
           this.sistemaService
@@ -137,9 +136,7 @@ export class SistemaComponent {
               this.authService.getEmailUser()
             )
             .subscribe(
-              (response: any) => {
-                debugger;
-              },
+              (response: any) => {},
               (error) => console.error(error),
               () => {}
             );

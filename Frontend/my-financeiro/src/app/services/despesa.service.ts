@@ -17,4 +17,12 @@ export class DespesaService {
       despesa
     );
   }
+
+  ListarDespesasUsuario(emailUsuario: string) {
+    let result = this.httpClient.get(
+      `${this.baseURL}/ListarDespesasUsuario?emailUsuario=${emailUsuario}`
+    );
+
+    return result;
+  }
 }
