@@ -25,4 +25,15 @@ export class DespesaService {
 
     return result;
   }
+
+  ObterDespesa(id: number) {
+    return this.httpClient.get(`${this.baseURL}/ObterDespesa?id=${id}`);
+  }
+
+  AtualizarDespesa(despesa: Despesa) {
+    return this.httpClient.put<Despesa>(
+      `${this.baseURL}/AtualizarDespesa`,
+      despesa
+    );
+  }
 }

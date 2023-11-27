@@ -120,28 +120,49 @@ export class DespesaComponent {
   enviar() {
     var dados = this.dadorForm();
 
-    let item = new Despesa();
-    item.Nome = dados['name'].value;
-    item.Valor = dados['valor'].value;
-    item.Pago = this.checked;
-    item.DataVencimento = dados['data'].value;
-    item.IdCategoria = parseInt(this.categoriaSelect.id);
+    if (this.itemEdicao) {
+      this.itemEdicao.Nome = dados['name'].value;
+      this.itemEdicao.Valor = dados['valor'].value;
+      this.itemEdicao.Pago = this.checked;
+      this.itemEdicao.DataVencimento = dados['data'].value;
+      this.itemEdicao.IdCategoria = parseInt(this.categoriaSelect.id);
 
-    this.despesaService.AdicionarDespesa(item).subscribe(
-      (response: Despesa) => {
-        this.despesaForm.reset();
-        this.ListarDespesasUsuario();
-      },
-      (error) => console.error(error),
-      () => {}
-    );
+      this.itemEdicao.NomePropriedade = '';
+      this.itemEdicao.mensagem = '';
+      this.itemEdicao.notificacoes = [];
+
+      this.despesaService.AtualizarDespesa(this.itemEdicao).subscribe(
+        (response: Despesa) => {
+          this.despesaForm.reset();
+          this.ListarDespesasUsuario();
+        },
+        (error) => console.error(error),
+        () => {}
+      );
+    } else {
+      let item = new Despesa();
+      item.Nome = dados['name'].value;
+      item.Valor = dados['valor'].value;
+      item.Pago = this.checked;
+      item.DataVencimento = dados['data'].value;
+      item.IdCategoria = parseInt(this.categoriaSelect.id);
+
+      this.despesaService.AdicionarDespesa(item).subscribe(
+        (response: Despesa) => {
+          this.despesaForm.reset();
+          this.ListarDespesasUsuario();
+        },
+        (error) => console.error(error),
+        () => {}
+      );
+    }
   }
 
   handleChangePago(item: any) {
     this.checked = item.checked as boolean;
   }
 
-  ListarCategoriasUsuario() {
+  ListarCategoriasUsuario(id: number = null) {
     this.categoriaService
       .ListarCategoriasUsuario(this.authService.getEmailUser())
       .subscribe((reponse: Array<Categoria>) => {
@@ -152,9 +173,47 @@ export class DespesaComponent {
           item.id = x.Id.toString();
           item.name = x.Nome;
           listaCatagorias.push(item);
+
+          if (id && id == x.Id) {
+            this.categoriaSelect = item;
+          }
         });
 
         this.listCategorias = listaCatagorias;
       });
+  }
+
+  itemEdicao: Despesa;
+
+  edicao(id: number) {
+    this.despesaService.ObterDespesa(id).subscribe(
+      (reponse: Despesa) => {
+        if (reponse) {
+          this.itemEdicao = reponse;
+          this.tipoTela = 2;
+
+          this.ListarCategoriasUsuario(reponse.IdCategoria);
+
+          var dados = this.dadorForm();
+          dados['name'].setValue(this.itemEdicao.Nome);
+
+          var dateToString = reponse.DataVencimento.toString();
+          var dateFull = dateToString.split('-');
+          var dayFull = dateFull[2].split('T');
+          var day = dayFull[0];
+          var month = dateFull[1];
+          var year = dateFull[0];
+
+          var dateInput = year + '-' + month + '-' + day;
+
+          dados['data'].setValue(dateInput);
+          dados['valor'].setValue(reponse.Valor);
+
+          this.checked = reponse.Pago;
+        }
+      },
+      (error) => console.error(error),
+      () => {}
+    );
   }
 }
