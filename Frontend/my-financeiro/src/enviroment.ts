@@ -1,10 +1,12 @@
-export const environment =
-{
-    production: false,
-    endPoint: 'https://localhost:7274/api/v1'
+export const environment = {
+  production: false,
+  endPoint: 'http://localhost:8081/api/v1',
 
-    //https://localhost:7274/swagger/index.html
-    //https://localhost:7274/
+  //endPoint: 'https://localhost:7274/api/v1'
 
-    //'https://localhost:7068/api'
-}
+  //http://localhost:8081/swagger/index.html
+  //https://localhost:7274/swagger/index.html
+  //https://localhost:7274/
+
+  //'https://localhost:7068/api'
+};

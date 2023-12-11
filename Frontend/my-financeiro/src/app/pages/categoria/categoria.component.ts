@@ -153,8 +153,6 @@ export class CategoriaComponent {
 
           lisSistemaFinanceiro.push(item);
 
-          debugger;
-
           if (id && id == x.Id) {
             this.sistemaSelect = item;
           }
