@@ -36,9 +36,11 @@ namespace Infra.Configuration
 
         public string ObterStringConexao()
         {
+            return "Data Source=ISBH03030244\\SQLEXPRESS;Initial Catalog=FINANCEIRO_2023;Integrated Security=False;User ID=sa;Password=Gabriel@2024;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+
             //return "Data Source=NBQSP-FC693;Initial Catalog=FINANCEIRO_2023;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
 
-            return "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=Financeiro2023;Integrated Security=True";
+            //return "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=Financeiro2023;Integrated Security=True";
             //return "Data Source=NBQSP-FC693;Initial Catalog=FINANCEIRO_2023;Integrated Security=True"; // Evitar
         }
 
