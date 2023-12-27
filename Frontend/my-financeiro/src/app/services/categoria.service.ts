@@ -34,4 +34,13 @@ export class CategoriaService {
       categoria
     );
   }
+
+  DeleteCategoria(id: number) {
+    debugger;
+
+    let result = this.httpClient.delete(
+      `${this.baseURL}/DeleteCategoria?id=${id}`
+    );
+    return result;
+  }
 }

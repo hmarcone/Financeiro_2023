@@ -45,6 +45,7 @@ export class CategoriaComponent {
   }
 
   cadastro() {
+    this.itemEdicao = null;
     this.tipoTela = 2;
     this.categoriaForm.reset();
   }
@@ -107,6 +108,8 @@ export class CategoriaComponent {
 
   enviar() {
     var dados = this.dadorForm();
+
+    debugger;
 
     if (this.itemEdicao) {
       this.itemEdicao.Nome = dados['name'].value;
@@ -177,6 +180,17 @@ export class CategoriaComponent {
           dados['name'].setValue(this.itemEdicao.Nome);
           this.ListaSistemasUsuario(reponse.IdSistema);
         }
+      },
+      (error) => console.error(error),
+      () => {}
+    );
+  }
+
+  deletar(id: number) {
+    this.categoriaService.DeleteCategoria(id).subscribe(
+      () => {
+        alert('Categoria deletada com sucesso!');
+        this.ListarCategoriasUsuario();
       },
       (error) => console.error(error),
       () => {}
