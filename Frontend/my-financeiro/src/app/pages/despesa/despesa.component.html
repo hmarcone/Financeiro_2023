@@ -101,6 +101,23 @@
 
       <div class="row">
         <div class="group-row">
+          <label>Tipo despesa</label>
+          <ng-select
+            style="width: 397px !important"
+            class="select-padrao"
+            formControlName="tipoDespesaSelect"
+            [(ngModel)]="tipoDespesaSelect"
+            [items]="listTiposDespesa"
+            bindLabel="name"
+            [multiple]="false"
+            [clearable]="false"
+            [searchable]="false"
+          ></ng-select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="group-row">
           <mat-slide-toggle
             class="group-slide"
             [color]="color"

@@ -90,6 +90,9 @@ export class DespesaComponent {
   listCategorias = new Array<SelectModel>();
   categoriaSelect = new SelectModel();
 
+  listTiposDespesa = new Array<SelectModel>();
+  tipoDespesaSelect = new SelectModel();
+
   color = 'accent';
   checked = false;
   disabled = false;
@@ -108,9 +111,11 @@ export class DespesaComponent {
       data: ['', [Validators.required]],
       sistemaSelect: ['', [Validators.required]],
       categoriaSelect: ['', [Validators.required]],
+      tipoDespesaSelect: ['', [Validators.required]],
     });
 
     this.ListarCategoriasUsuario();
+    this.ListaTiposDespesas();
   }
 
   dadorForm() {
@@ -118,7 +123,7 @@ export class DespesaComponent {
   }
 
   enviar() {
-    var dados = this.dadorForm();
+    let dados = this.dadorForm();
 
     if (this.itemEdicao) {
       this.itemEdicao.Nome = dados['name'].value;
@@ -126,6 +131,7 @@ export class DespesaComponent {
       this.itemEdicao.Pago = this.checked;
       this.itemEdicao.DataVencimento = dados['data'].value;
       this.itemEdicao.IdCategoria = parseInt(this.categoriaSelect.id);
+      this.itemEdicao.TipoDespesa = parseInt(this.tipoDespesaSelect.id);
 
       this.itemEdicao.NomePropriedade = '';
       this.itemEdicao.mensagem = '';
@@ -146,6 +152,7 @@ export class DespesaComponent {
       item.Pago = this.checked;
       item.DataVencimento = dados['data'].value;
       item.IdCategoria = parseInt(this.categoriaSelect.id);
+      item.TipoDespesa = parseInt(this.tipoDespesaSelect.id);
 
       this.despesaService.AdicionarDespesa(item).subscribe(
         (response: Despesa) => {
@@ -160,6 +167,22 @@ export class DespesaComponent {
 
   handleChangePago(item: any) {
     this.checked = item.checked as boolean;
+  }
+
+  ListaTiposDespesas(id: number = null) {
+    // Criar a lista de tipos de despesas diretamente
+    this.listTiposDespesa = [
+      { id: '1', name: 'Contas' },
+      { id: '2', name: 'Investimento' },
+      // Adicione mais tipos de despesas conforme necessário
+    ];
+
+    // Se um ID foi fornecido, encontrar o tipo de despesa correspondente
+    if (id) {
+      this.tipoDespesaSelect = this.listTiposDespesa.find(
+        (x) => x.id === id.toString()
+      );
+    }
   }
 
   ListarCategoriasUsuario(id: number = null) {
@@ -193,6 +216,7 @@ export class DespesaComponent {
           this.tipoTela = 2;
 
           this.ListarCategoriasUsuario(reponse.IdCategoria);
+          this.ListaTiposDespesas(reponse.TipoDespesa);
 
           var dados = this.dadorForm();
           dados['name'].setValue(this.itemEdicao.Nome);
