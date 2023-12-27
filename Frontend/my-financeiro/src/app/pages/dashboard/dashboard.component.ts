@@ -27,6 +27,7 @@ export class DashboardComponent {
       .CarregaGraficos(this.authService.getEmailUser())
       .subscribe(
         (response: any) => {
+          debugger;
           console.log(response);
           this.objetoGrafico = response;
         },

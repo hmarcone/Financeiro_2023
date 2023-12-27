@@ -12,10 +12,16 @@ export class DespesaService {
   private readonly baseURL = environment['endPoint'];
 
   AdicionarDespesa(despesa: Despesa) {
-    return this.httpClient.post<Despesa>(
+    debugger;
+
+    let result = this.httpClient.post<Despesa>(
       `${this.baseURL}/AdicionarDespesa`,
       despesa
     );
+
+    console.log(result);
+
+    return result;
   }
 
   ListarDespesasUsuario(emailUsuario: string) {

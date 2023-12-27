@@ -12,10 +12,7 @@
 
           <h3 class="card-title">
             R$
-            <span
-              id="Investimento"
-              *ngIf="objetoGrafico?.investimentos?.length > 0"
-            >
+            <span id="Investimento" *ngIf="objetoGrafico?.investimentos > 0">
               {{ objetoGrafico.investimentos }}
             </span>
           </h3>
@@ -34,10 +31,7 @@
 
           <h3 class="card-title">
             R$
-            <span
-              id="Investimento"
-              *ngIf="objetoGrafico?.despesas_pagas?.length > 0"
-            >
+            <span id="Investimento" *ngIf="objetoGrafico?.despesas_pagas > 0">
               {{ objetoGrafico.despesas_pagas }}
             </span>
           </h3>
@@ -58,7 +52,7 @@
             R$
             <span
               id="Investimento"
-              *ngIf="objetoGrafico?.despesas_pendentes?.length > 0"
+              *ngIf="objetoGrafico?.despesas_pendentes > 0"
             >
               {{ objetoGrafico.despesas_pendentes }}
             </span>
@@ -80,7 +74,10 @@
 
           <h3 class="card-title">
             R$
-            <span id="Investimento">
+            <span
+              id="Investimento"
+              *ngIf="objetoGrafico?.despesas_naoPagasMesesAnteriores > 0"
+            >
               {{ objetoGrafico.despesas_naoPagasMesesAnteriores }}
             </span>
           </h3>
