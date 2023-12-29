@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { SistemaService } from 'src/app/services/sistema.service';
+import { NotificationServiceService } from 'src/app/utility/NotificationService.service';
 
 @Component({
   selector: 'app-categoria',
@@ -80,7 +81,8 @@ export class CategoriaComponent {
     public formBuilder: FormBuilder,
     public sistemaService: SistemaService,
     public authService: AuthService,
-    public categoriaService: CategoriaService
+    public categoriaService: CategoriaService,
+    private notifyService: NotificationServiceService
   ) {}
 
   listSistemas = new Array<SelectModel>();
@@ -109,8 +111,6 @@ export class CategoriaComponent {
   enviar() {
     var dados = this.dadorForm();
 
-    debugger;
-
     if (this.itemEdicao) {
       this.itemEdicao.Nome = dados['name'].value;
       this.itemEdicao.IdSistema = parseInt(this.sistemaSelect.id);
@@ -120,6 +120,10 @@ export class CategoriaComponent {
 
       this.categoriaService.AtualizarCategoria(this.itemEdicao).subscribe(
         (response: Categoria) => {
+          this.notifyService.showSuccess(
+            'Categoria atualizada com sucesso!',
+            'Categoria'
+          );
           this.categoriaForm.reset();
           this.ListarCategoriasUsuario();
         },
@@ -134,6 +138,10 @@ export class CategoriaComponent {
 
       this.categoriaService.AdicionarCategoria(item).subscribe(
         (response: Categoria) => {
+          this.notifyService.showSuccess(
+            'Categoria adicionada com sucesso!',
+            'Categoria'
+          );
           this.categoriaForm.reset();
           this.ListarCategoriasUsuario();
         },
@@ -189,7 +197,11 @@ export class CategoriaComponent {
   deletar(id: number) {
     this.categoriaService.DeleteCategoria(id).subscribe(
       () => {
-        alert('Categoria deletada com sucesso!');
+        this.notifyService.showSuccess(
+          'Categoria excluida com sucesso!',
+          'Categoria'
+        );
+
         this.ListarCategoriasUsuario();
       },
       (error) => console.error(error),

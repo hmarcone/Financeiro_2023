@@ -17,6 +17,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { AuthGuard } from './pages/guards/auth-guard.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
+
 const RxJS = [LoaderInterceptor, HTTPStatus];
 
 @NgModule({
@@ -30,6 +32,13 @@ const RxJS = [LoaderInterceptor, HTTPStatus];
 
     FormsModule,
     ReactiveFormsModule,
+
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      progressBar: true,
+    }),
 
     BrowserAnimationsModule,
     NgxSpinnerModule,
